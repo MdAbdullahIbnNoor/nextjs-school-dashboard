@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Menu from "../components/Menu";
+import Navbar from "../components/Navbar";
 
 export default function DashboardLayout({
     children,
@@ -10,7 +11,7 @@ export default function DashboardLayout({
     return (
         <div className="h-screen flex">
             {/* Left */}
-            <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-gray-100 shadow-lg shadow-black drop-shadow-sm">
+            <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]">
                 <Link href="/" className="flex gap-2 items-center m-2">
                     <Image
                         src="/logo.png"
@@ -23,10 +24,15 @@ export default function DashboardLayout({
                         School App
                     </span>
                 </Link>
-                <Menu/>
+                <Menu />
             </div>
             {/* right */}
-            <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA]">{children}</div>
+            <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll">
+                <Navbar/>   
+                <div className="pl-8">
+                {children}
+                </div>
+            </div>
         </div>
     );
 }
