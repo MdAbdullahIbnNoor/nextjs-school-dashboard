@@ -96,15 +96,15 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className='mt-4 text-sm text-gray-50'>
+    <div className='text-sm text-gray-700'>
       {menuItems.map(i => (
         <div className="flex flex-col justify-start space-y-2 items-start ml-4" key={i.title}>
-          <span className="font-semibold my-2">{i.title}</span>
+          <span className="hidden lg:block font-light text-gray-400 my-4">{i.title}</span>
           <hr/>
           {i.items.map(item => (
             <Link href={item.href} key={item.label} className="flex gap-2 items-center justify-center">
               <Image src={item.icon} alt="" width={17} height={17} />
-              <span>{item.label}</span>
+              <span className="hidden lg:block">{item.label}</span>
             </Link>
           ))}
         </div>
