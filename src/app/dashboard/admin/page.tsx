@@ -28,7 +28,7 @@ const AdminPage = () => {
           </div>
         </div>
         {/* Bottom Charts */}
-        <div className="w-full h-[330px] rounded-xl bg-white">
+        <div className="w-full h-[330px] rounded-xl bg-white mt-4">
           <FinanceChart />
         </div>
       </div>
