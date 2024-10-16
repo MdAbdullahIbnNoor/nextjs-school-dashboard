@@ -1,9 +1,12 @@
 import UserCard from "@/app/components/UserCard"
 import CountChart from '../../components/CountChart';
+import AttendanceChart from "@/app/components/AttendenceChart";
+import FinanceChart from "@/app/components/FinanceChart";
+import Calender from "@/app/components/Calender";
 
 const AdminPage = () => {
   return (
-    <div className='p-2 flex-col md:flex-row'>
+    <div className='py-2 flex flex-col md:flex-row gap-4'>
       {/* Left */}
       <div className="w-full lg:w-2/3">
         {/* User Cards */}
@@ -16,18 +19,26 @@ const AdminPage = () => {
         {/* Middle Charts */}
         <div className="flex gap-4 flex-col lg:flex-row mt-4">
           {/* Count Charts */}
-          <div className="w-full lg:w-1/3 h-[450px] rounded-xl bg-white">
+          <div className="w-full lg:w-1/3 h-[320px] rounded-xl bg-white">
             <CountChart />
           </div>
-          {/* Attendence Chart */}
-          <div className="w-full lg:w-2/3 h-[450px]"></div>
+          {/* Attendance Chart */}
+          <div className="w-full lg:w-2/3 h-[320px] rounded-xl bg-white">
+            <AttendanceChart />
+          </div>
         </div>
         {/* Bottom Charts */}
-        <div>
+        <div className="w-full h-[330px] rounded-xl bg-white">
+          <FinanceChart />
         </div>
       </div>
       {/* Right */}
-      <div className="w-full lg:w-1/3"></div>
+      <div className="w-full lg:w-1/3 flex flex-col gap-8">
+        {/* Calender */}
+        <div className="rounded-xl bg-white">
+          <Calender />
+        </div>
+      </div>
     </div>
   )
 }
